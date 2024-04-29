@@ -1,0 +1,65 @@
+//verificatio, de billet
+ALGORITHM verification_de_billet
+VAR
+    age:INTEGER:=0;
+    prix;
+BEGIN
+READ (age);
+IF (age <= 12) THEN
+    prix = 10$;
+ELSE_IF (age >= 13 & age <= 17) THEN
+    prix = 15$;
+ELSE
+ prix = 20$;
+END_IF
+END
+//  rWeather Clothing Adviser 
+ALGORITHM  Weather_Clothing_Adviser
+VAR
+    temperature : INTEGER;
+BEGIN
+    Display "Quelle est la température actuelle en degrés Celsius ?"
+    Read temperature
+
+    Display "Est-ce qu'il pleut ? (Répondez 'oui' ou 'non')"
+    Read isRaining
+
+    isRaining := ConvertToLowercase(isRaining)
+
+
+    If temperature < 10 Then
+        If isRaining = 'oui' Then
+            Display "Il fait froid et il pleut. Vous devriez porter un manteau chaud, un parapluie et des bottes de pluie."
+        Else
+            Display "Il fait froid mais il ne pleut pas. Vous devriez porter un manteau chaud et une écharpe."
+        End If
+    Else If temperature >= 10 AND temperature < 20 Then
+        If isRaining = 'oui' Then
+            Display "Il fait frais et il pleut. Vous devriez porter un manteau léger et un parapluie."
+        Else
+            Display "Il fait frais mais il ne pleut pas. Vous devriez porter un pull ou une veste légère."
+        End If
+    Else
+        If isRaining = 'oui' Then
+            Display "Il fait chaud et il pleut. Vous devriez porter un imperméable léger."
+        Else
+            Display  "Il fait chaud et il ne pleut pas. Vous devriez porter des vêtements légers et respirants."
+        Fin Si
+        End If
+    End If
+End
+
+END
+// RECURSIVITé
+
+function fibonacci(n)
+    Begin
+       // Cas de base : si n est 0 ou 1, retourner n
+        If n = 0 OR n = 1 Then
+            Return n
+        End If
+        
+     // Appel récursif : retourner la somme des deux nombres de Fibonacci précédents   
+        Return fibonacci(n - 1) + fibonacci(n - 2)
+    End
+
